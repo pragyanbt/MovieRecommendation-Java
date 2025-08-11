@@ -106,4 +106,38 @@ public class FourthRatings {
     /** Weighted recommendations with an extra filter. Excludes movies already rated by target. */
     public ArrayList<Rating> getSimilarRatingsByFilter(String id, int numSimilarRaters,
                                                        int minimalRaters, Filter filterCriteria) {
-      
+        ArrayList<Rating> ret = new ArrayList<>();
+        ArrayList<Rating> sims = getSimilarities(id);
+        Rater me = RaterDatabase.getRater(id);
+        if (me == null) return ret;
+
+        HashSet<String> already = new HashSet<>(me.getItemsRated());
+        ArrayList<String> movies = MovieDatabase.filterBy(filterCriteria);
+        int limit = Math.min(numSimilarRaters, sims.size());
+
+        for (String mID : movies) {
+            if (already.contains(mID)) continue;
+
+            double weighted = 0.0, weightSum = 0.0;
+            int contributors = 0;
+
+            for (int k = 0; k < limit; k++) {
+                Rating s = sims.get(k);
+                Rater r = RaterDatabase.getRater(s.getItem());
+                if (r == null) continue;
+                double v = r.getRating(mID);
+                if (v == -1) continue;
+
+                weighted  += s.getValue() * v;
+                weightSum += s.getValue();
+                contributors++;
+            }
+
+            if (contributors >= minimalRaters && weightSum > 0) {
+                ret.add(new Rating(mID, weighted / weightSum));
+            }
+        }
+        Collections.sort(ret, Collections.reverseOrder());
+        return ret;
+    }
+}
