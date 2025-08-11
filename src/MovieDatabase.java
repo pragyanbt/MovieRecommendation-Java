@@ -32,6 +32,10 @@ public class MovieDatabase {
     public static String getCountry(String id) { initialize(); return ourMovies.get(id).getCountry(); }
     public static int getMinutes(String id) { initialize(); return ourMovies.get(id).getMinutes(); }
     public static Movie getMovie(String id) { initialize(); return ourMovies.get(id); }
+    public static String getPoster(String id) {
+        initialize();
+        return ourMovies.get(id).getPoster();
+    }
 
     public static ArrayList<String> filterBy(Filter f) {
         initialize();
