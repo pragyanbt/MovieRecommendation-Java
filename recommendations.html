@@ -1,239 +1,292 @@
 <!doctype html><html><head><meta charset='utf-8'>
-<title>Your Movie Picks</title>
+<title>Your Movie Recommendations</title>
 <style>
-body{margin:0;background:#0f172a;color:#e5e7eb;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-.wrap{max-width:1200px;margin:32px auto;padding:0 20px}
-h1{font-size:28px;margin:0 0 8px;font-weight:700}
-.sub{color:#94a3b8;margin:0 0 24px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
-.card{background:#111827;border:1px solid #1f2937;border-radius:14px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.35)}
-.poster{width:100%;height:320px;object-fit:cover;background:#0b1220}
-.meta{padding:10px 12px}
-.title{font-weight:700;line-height:1.25;margin:4px 0 6px;font-size:16px;color:#fff}
-.dim{color:#9ca3af;font-size:12px}
-.row{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
-.badge{background:#0ea5e9;color:#001018;padding:2px 8px;border-radius:999px;font-weight:700;font-size:12px}
-.empty{background:#0b1220;border:1px dashed #334155;border-radius:12px;padding:28px;text-align:center;color:#93c5fd}
-a{color:#93c5fd;text-decoration:none} a:hover{text-decoration:underline}
-</style></head><body>
-<div class='wrap'>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:24px;color:#111}
+.wrap{max-width:1160px;margin:0 auto}
+h1{font-size:24px;margin:0 0 6px}
+p.note{color:#555;margin:0 0 16px}
+.controls{display:flex;gap:12px;align-items:center;margin:12px 0 16px}
+select,input[type=number]{padding:6px 8px;border:1px solid #ddd;border-radius:8px}
+button{padding:8px 12px;border:1px solid #0ea5e9;background:#0ea5e9;color:#fff;border-radius:8px;cursor:pointer}
+button.secondary{background:#fff;color:#0ea5e9}
+table{border-collapse:collapse;width:100%;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+th,td{border-bottom:1px solid #eee;padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#fafafa;font-weight:600;position:sticky;top:0;z-index:1}
+tr:hover{background:#f9fbff}
+.poster{width:54px;height:80px;object-fit:cover;border-radius:6px;background:#f2f2f2}
+.score{font-variant-numeric:tabular-nums;font-weight:700}
+.my{display:flex;align-items:center;gap:8px}
+.my input[type=range]{width:140px}
+.pill{font-size:12px;padding:2px 8px;border-radius:999px;background:#eef;border:1px solid #dde;color:#334}
+</style></head><body><div class='wrap'>
 <h1>Recommended for you</h1>
-<p class='sub'>Based on people with similar taste. Showing 24 picks.</p>
-<div class='grid'>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BMjAwMTY3MTU0Ml5BMl5BanBnXkFtZTgwNzE0ODAwMzE@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>Leviathan</div>
-<div class='dim'>2014 • 140 min</div>
-<div class='dim'>Drama</div>
-<div class='dim'>Dir: Andrey Zvyagintsev</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>9.368</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BMTk0NjY0Mzg5MF5BMl5BanBnXkFtZTcwNzM1OTM2MQ@@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>Good Will Hunting</div>
-<div class='dim'>1997 • 126 min</div>
-<div class='dim'>Drama</div>
-<div class='dim'>Dir: Gus Van Sant</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>9.310</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>Interstellar</div>
-<div class='dim'>2014 • 169 min</div>
-<div class='dim'>Adventure, Drama, Sci-Fi</div>
-<div class='dim'>Dir: Christopher Nolan</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>9.294</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BMjA4NDI0MTIxNF5BMl5BanBnXkFtZTYwNTM0MzY2._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>The Prestige</div>
-<div class='dim'>2006 • 130 min</div>
-<div class='dim'>Drama, Mystery, Sci-Fi</div>
-<div class='dim'>Dir: Christopher Nolan</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>9.226</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BMTk4ODk5MTMyNV5BMl5BanBnXkFtZTcwMDMyNTg0Ng@@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>Warrior</div>
-<div class='dim'>2011 • 140 min</div>
-<div class='dim'>Drama, Sport</div>
-<div class='dim'>Dir: Gavin O'Connor</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>9.160</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BMTA1ODUzMDA3NzFeQTJeQWpwZ15BbWU3MDgxMTYxNTk@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>About Time</div>
-<div class='dim'>2013 • 123 min</div>
-<div class='dim'>Drama, Fantasy, Romance</div>
-<div class='dim'>Dir: Richard Curtis</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>9.059</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BOTA5NDYxNTg0OV5BMl5BanBnXkFtZTgwODE5NzU1MTE@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>The Amazing Spider-Man 2</div>
-<div class='dim'>2014 • 142 min</div>
-<div class='dim'>Action, Adventure, Fantasy</div>
-<div class='dim'>Dir: Marc Webb</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>8.981</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BMTk0MDQ3MzAzOV5BMl5BanBnXkFtZTgwNzU1NzE3MjE@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>Gone Girl</div>
-<div class='dim'>2014 • 149 min</div>
-<div class='dim'>Crime, Drama, Mystery</div>
-<div class='dim'>Dir: David Fincher</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>8.913</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BMTUyMTE0ODcxNF5BMl5BanBnXkFtZTgwODE4NDQzNTE@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>Mad Max: Fury Road</div>
-<div class='dim'>2015 • 120 min</div>
-<div class='dim'>Action, Adventure, Sci-Fi</div>
-<div class='dim'>Dir: George Miller</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>8.908</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BMTQyMjUxNTc0Ml5BMl5BanBnXkFtZTcwMjg1ODExNg@@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>Rise of the Planet of the Apes</div>
-<div class='dim'>2011 • 105 min</div>
-<div class='dim'>Action, Drama, Sci-Fi</div>
-<div class='dim'>Dir: Rupert Wyatt</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>8.895</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BMTc0MTQ3NzE4Nl5BMl5BanBnXkFtZTcwMzA4NDM5OQ@@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>Saving Mr. Banks</div>
-<div class='dim'>2013 • 125 min</div>
-<div class='dim'>Biography, Comedy, Drama</div>
-<div class='dim'>Dir: John Lee Hancock</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>8.868</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BMTQxNTc3NDM2MF5BMl5BanBnXkFtZTcwNzQ5NTQ3OQ@@._V1._CR28,28.649993896484375,1271,1991.0000305175781_SX89_AL_.jpg_V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>Don Jon</div>
-<div class='dim'>2013 • 90 min</div>
-<div class='dim'>Comedy, Drama, Romance</div>
-<div class='dim'>Dir: Joseph Gordon-Levitt</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>8.820</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BMjM4NTI5NzYyNV5BMl5BanBnXkFtZTgwNTkxNTYxMTE@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>American Beauty</div>
-<div class='dim'>1999 • 122 min</div>
-<div class='dim'>Drama, Romance</div>
-<div class='dim'>Dir: Sam Mendes</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>8.783</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BMTU4NDg0MzkzNV5BMl5BanBnXkFtZTgwODA3Mzc1MDE@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>The Wind Rises</div>
-<div class='dim'>2013 • 126 min</div>
-<div class='dim'>Animation, Biography, Drama</div>
-<div class='dim'>Dir: Hayao Miyazaki</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>8.769</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BMTUxNzc0OTIxMV5BMl5BanBnXkFtZTgwNDI3NzU2NDE@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>Ex Machina</div>
-<div class='dim'>2015 • 108 min</div>
-<div class='dim'>Drama, Mystery, Sci-Fi</div>
-<div class='dim'>Dir: Alex Garland</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>8.765</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BOTgxMDQwMDk0OF5BMl5BanBnXkFtZTgwNjU5OTg2NDE@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>Inside Out</div>
-<div class='dim'>2015 • 95 min</div>
-<div class='dim'>Animation, Adventure, Comedy</div>
-<div class='dim'>Dir: Pete Docter, Ronnie Del Carmen</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>8.740</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BMTU4OTQ3MDUyMV5BMl5BanBnXkFtZTgwOTA2MjU0MjE@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>Whiplash</div>
-<div class='dim'>2014 • 107 min</div>
-<div class='dim'>Drama, Music</div>
-<div class='dim'>Dir: Damien Chazelle</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>8.736</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BNDkwNTEyMzkzNl5BMl5BanBnXkFtZTgwNTAwNzk3MjE@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>The Imitation Game</div>
-<div class='dim'>2014 • 114 min</div>
-<div class='dim'>Biography, Drama, Thriller</div>
-<div class='dim'>Dir: Morten Tyldum</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>8.729</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BNTg2OTY2ODg5OF5BMl5BanBnXkFtZTcwODM5MTYxOA@@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>Life of Pi</div>
-<div class='dim'>2012 • 127 min</div>
-<div class='dim'>Adventure, Drama, Fantasy</div>
-<div class='dim'>Dir: Ang Lee</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>8.722</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BMjA5NzgxODE2NF5BMl5BanBnXkFtZTcwNTI1NTI0OQ@@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>Before Midnight</div>
-<div class='dim'>2013 • 109 min</div>
-<div class='dim'>Drama, Romance</div>
-<div class='dim'>Dir: Richard Linklater</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>8.643</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BMTYxNDA3MDQwNl5BMl5BanBnXkFtZTcwNTU4Mzc1Nw@@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>The Intouchables</div>
-<div class='dim'>2011 • 112 min</div>
-<div class='dim'>Biography, Comedy, Drama</div>
-<div class='dim'>Dir: Olivier Nakache, Eric Toledano</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>8.617</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BMzM5NjUxOTEyMl5BMl5BanBnXkFtZTgwNjEyMDM0MDE@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>The Grand Budapest Hotel</div>
-<div class='dim'>2014 • 99 min</div>
-<div class='dim'>Adventure, Comedy, Drama</div>
-<div class='dim'>Dir: Wes Anderson</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>8.615</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BMTQ0OTU1MDkxMF5BMl5BanBnXkFtZTcwNjI5OTA3OQ@@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>Fruitvale Station</div>
-<div class='dim'>2013 • 85 min</div>
-<div class='dim'>Biography, Drama, Romance</div>
-<div class='dim'>Dir: Ryan Coogler</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>8.613</span></div>
-</div></div>
-<div class='card'>
-<img class='poster' loading='lazy' src='http://ia.media-imdb.com/images/M/MV5BMTUxNTk5MTE0OF5BMl5BanBnXkFtZTcwMjA2NzY3NA@@._V1_SX300.jpg' alt='Poster'>
-<div class='meta'>
-<div class='title'>Fast Five</div>
-<div class='dim'>2011 • 131 min</div>
-<div class='dim'>Action, Crime, Thriller</div>
-<div class='dim'>Dir: Justin Lin</div>
-<div class='row'><span class='dim'>Match score</span><span class='badge'>8.609</span></div>
-</div></div>
-</div></div></body></html>
+<p class='note'>Based on people with similar taste. Use the personal rating (1–10) to reorder and filter locally.</p>
+<div class='controls'>
+<label>Sort by: <select id='sortBy'><option value='match'>Match Score (desc)</option><option value='my'>My Rating (desc)</option><option value='year'>Year (desc)</option><option value='minutes'>Minutes (asc)</option></select></label>
+<label>Min my rating: <input id='minMy' type='number' min='1' max='10' step='1' value='1'></label>
+<button id='apply'>Apply</button>
+<button class='secondary' id='reset'>Reset My Ratings</button>
+</div>
+<table id='recs'><thead><tr><th>#</th><th>Poster</th><th>Title</th><th>Year</th><th>Minutes</th><th>Genres</th><th>Directors</th><th>Match<br>Score</th><th>My Rating<br>(1–10)</th></tr></thead><tbody>
+<tr data-id='2802154' data-score='9.368' data-year='2014' data-minutes='140'>
+<td class='idx'>1</td>
+<td><img class='poster' src='http://ia.media-imdb.com/images/M/MV5BMjAwMTY3MTU0Ml5BMl5BanBnXkFtZTgwNzE0ODAwMzE@._V1_SX300.jpg' alt='Poster'></td>
+<td>Leviathan</td>
+<td>2014</td>
+<td>140</td>
+<td>Drama</td>
+<td>Andrey Zvyagintsev</td>
+<td class='score'>9.368</td>
+<td class='my'><input class='myRange' type='range' min='1' max='10' step='1'><span class='pill myVal'>–</span></td>
+</tr>
+<tr data-id='0119217' data-score='9.310' data-year='1997' data-minutes='126'>
+<td class='idx'>2</td>
+<td><img class='poster' src='http://ia.media-imdb.com/images/M/MV5BMTk0NjY0Mzg5MF5BMl5BanBnXkFtZTcwNzM1OTM2MQ@@._V1_SX300.jpg' alt='Poster'></td>
+<td>Good Will Hunting</td>
+<td>1997</td>
+<td>126</td>
+<td>Drama</td>
+<td>Gus Van Sant</td>
+<td class='score'>9.310</td>
+<td class='my'><input class='myRange' type='range' min='1' max='10' step='1'><span class='pill myVal'>–</span></td>
+</tr>
+<tr data-id='0816692' data-score='9.294' data-year='2014' data-minutes='169'>
+<td class='idx'>3</td>
+<td><img class='poster' src='http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg' alt='Poster'></td>
+<td>Interstellar</td>
+<td>2014</td>
+<td>169</td>
+<td>Adventure, Drama, Sci-Fi</td>
+<td>Christopher Nolan</td>
+<td class='score'>9.294</td>
+<td class='my'><input class='myRange' type='range' min='1' max='10' step='1'><span class='pill myVal'>–</span></td>
+</tr>
+<tr data-id='0482571' data-score='9.226' data-year='2006' data-minutes='130'>
+<td class='idx'>4</td>
+<td><img class='poster' src='http://ia.media-imdb.com/images/M/MV5BMjA4NDI0MTIxNF5BMl5BanBnXkFtZTYwNTM0MzY2._V1_SX300.jpg' alt='Poster'></td>
+<td>The Prestige</td>
+<td>2006</td>
+<td>130</td>
+<td>Drama, Mystery, Sci-Fi</td>
+<td>Christopher Nolan</td>
+<td class='score'>9.226</td>
+<td class='my'><input class='myRange' type='range' min='1' max='10' step='1'><span class='pill myVal'>–</span></td>
+</tr>
+<tr data-id='1291584' data-score='9.160' data-year='2011' data-minutes='140'>
+<td class='idx'>5</td>
+<td><img class='poster' src='http://ia.media-imdb.com/images/M/MV5BMTk4ODk5MTMyNV5BMl5BanBnXkFtZTcwMDMyNTg0Ng@@._V1_SX300.jpg' alt='Poster'></td>
+<td>Warrior</td>
+<td>2011</td>
+<td>140</td>
+<td>Drama, Sport</td>
+<td>Gavin O'Connor</td>
+<td class='score'>9.160</td>
+<td class='my'><input class='myRange' type='range' min='1' max='10' step='1'><span class='pill myVal'>–</span></td>
+</tr>
+<tr data-id='2194499' data-score='9.059' data-year='2013' data-minutes='123'>
+<td class='idx'>6</td>
+<td><img class='poster' src='http://ia.media-imdb.com/images/M/MV5BMTA1ODUzMDA3NzFeQTJeQWpwZ15BbWU3MDgxMTYxNTk@._V1_SX300.jpg' alt='Poster'></td>
+<td>About Time</td>
+<td>2013</td>
+<td>123</td>
+<td>Drama, Fantasy, Romance</td>
+<td>Richard Curtis</td>
+<td class='score'>9.059</td>
+<td class='my'><input class='myRange' type='range' min='1' max='10' step='1'><span class='pill myVal'>–</span></td>
+</tr>
+<tr data-id='1872181' data-score='8.981' data-year='2014' data-minutes='142'>
+<td class='idx'>7</td>
+<td><img class='poster' src='http://ia.media-imdb.com/images/M/MV5BOTA5NDYxNTg0OV5BMl5BanBnXkFtZTgwODE5NzU1MTE@._V1_SX300.jpg' alt='Poster'></td>
+<td>The Amazing Spider-Man 2</td>
+<td>2014</td>
+<td>142</td>
+<td>Action, Adventure, Fantasy</td>
+<td>Marc Webb</td>
+<td class='score'>8.981</td>
+<td class='my'><input class='myRange' type='range' min='1' max='10' step='1'><span class='pill myVal'>–</span></td>
+</tr>
+<tr data-id='2267998' data-score='8.913' data-year='2014' data-minutes='149'>
+<td class='idx'>8</td>
+<td><img class='poster' src='http://ia.media-imdb.com/images/M/MV5BMTk0MDQ3MzAzOV5BMl5BanBnXkFtZTgwNzU1NzE3MjE@._V1_SX300.jpg' alt='Poster'></td>
+<td>Gone Girl</td>
+<td>2014</td>
+<td>149</td>
+<td>Crime, Drama, Mystery</td>
+<td>David Fincher</td>
+<td class='score'>8.913</td>
+<td class='my'><input class='myRange' type='range' min='1' max='10' step='1'><span class='pill myVal'>–</span></td>
+</tr>
+<tr data-id='1392190' data-score='8.908' data-year='2015' data-minutes='120'>
+<td class='idx'>9</td>
+<td><img class='poster' src='http://ia.media-imdb.com/images/M/MV5BMTUyMTE0ODcxNF5BMl5BanBnXkFtZTgwODE4NDQzNTE@._V1_SX300.jpg' alt='Poster'></td>
+<td>Mad Max: Fury Road</td>
+<td>2015</td>
+<td>120</td>
+<td>Action, Adventure, Sci-Fi</td>
+<td>George Miller</td>
+<td class='score'>8.908</td>
+<td class='my'><input class='myRange' type='range' min='1' max='10' step='1'><span class='pill myVal'>–</span></td>
+</tr>
+<tr data-id='1318514' data-score='8.895' data-year='2011' data-minutes='105'>
+<td class='idx'>10</td>
+<td><img class='poster' src='http://ia.media-imdb.com/images/M/MV5BMTQyMjUxNTc0Ml5BMl5BanBnXkFtZTcwMjg1ODExNg@@._V1_SX300.jpg' alt='Poster'></td>
+<td>Rise of the Planet of the Apes</td>
+<td>2011</td>
+<td>105</td>
+<td>Action, Drama, Sci-Fi</td>
+<td>Rupert Wyatt</td>
+<td class='score'>8.895</td>
+<td class='my'><input class='myRange' type='range' min='1' max='10' step='1'><span class='pill myVal'>–</span></td>
+</tr>
+<tr data-id='2140373' data-score='8.868' data-year='2013' data-minutes='125'>
+<td class='idx'>11</td>
+<td><img class='poster' src='http://ia.media-imdb.com/images/M/MV5BMTc0MTQ3NzE4Nl5BMl5BanBnXkFtZTcwMzA4NDM5OQ@@._V1_SX300.jpg' alt='Poster'></td>
+<td>Saving Mr. Banks</td>
+<td>2013</td>
+<td>125</td>
+<td>Biography, Comedy, Drama</td>
+<td>John Lee Hancock</td>
+<td class='score'>8.868</td>
+<td class='my'><input class='myRange' type='range' min='1' max='10' step='1'><span class='pill myVal'>–</span></td>
+</tr>
+<tr data-id='2229499' data-score='8.820' data-year='2013' data-minutes='90'>
+<td class='idx'>12</td>
+<td><img class='poster' src='http://ia.media-imdb.com/images/M/MV5BMTQxNTc3NDM2MF5BMl5BanBnXkFtZTcwNzQ5NTQ3OQ@@._V1._CR28,28.649993896484375,1271,1991.0000305175781_SX89_AL_.jpg_V1_SX300.jpg' alt='Poster'></td>
+<td>Don Jon</td>
+<td>2013</td>
+<td>90</td>
+<td>Comedy, Drama, Romance</td>
+<td>Joseph Gordon-Levitt</td>
+<td class='score'>8.820</td>
+<td class='my'><input class='myRange' type='range' min='1' max='10' step='1'><span class='pill myVal'>–</span></td>
+</tr>
+<tr data-id='0169547' data-score='8.783' data-year='1999' data-minutes='122'>
+<td class='idx'>13</td>
+<td><img class='poster' src='http://ia.media-imdb.com/images/M/MV5BMjM4NTI5NzYyNV5BMl5BanBnXkFtZTgwNTkxNTYxMTE@._V1_SX300.jpg' alt='Poster'></td>
+<td>American Beauty</td>
+<td>1999</td>
+<td>122</td>
+<td>Drama, Romance</td>
+<td>Sam Mendes</td>
+<td class='score'>8.783</td>
+<td class='my'><input class='myRange' type='range' min='1' max='10' step='1'><span class='pill myVal'>–</span></td>
+</tr>
+<tr data-id='2013293' data-score='8.769' data-year='2013' data-minutes='126'>
+<td class='idx'>14</td>
+<td><img class='poster' src='http://ia.media-imdb.com/images/M/MV5BMTU4NDg0MzkzNV5BMl5BanBnXkFtZTgwODA3Mzc1MDE@._V1_SX300.jpg' alt='Poster'></td>
+<td>The Wind Rises</td>
+<td>2013</td>
+<td>126</td>
+<td>Animation, Biography, Drama</td>
+<td>Hayao Miyazaki</td>
+<td class='score'>8.769</td>
+<td class='my'><input class='myRange' type='range' min='1' max='10' step='1'><span class='pill myVal'>–</span></td>
+</tr>
+<tr data-id='0470752' data-score='8.765' data-year='2015' data-minutes='108'>
+<td class='idx'>15</td>
+<td><img class='poster' src='http://ia.media-imdb.com/images/M/MV5BMTUxNzc0OTIxMV5BMl5BanBnXkFtZTgwNDI3NzU2NDE@._V1_SX300.jpg' alt='Poster'></td>
+<td>Ex Machina</td>
+<td>2015</td>
+<td>108</td>
+<td>Drama, Mystery, Sci-Fi</td>
+<td>Alex Garland</td>
+<td class='score'>8.765</td>
+<td class='my'><input class='myRange' type='range' min='1' max='10' step='1'><span class='pill myVal'>–</span></td>
+</tr>
+<tr data-id='2096673' data-score='8.740' data-year='2015' data-minutes='95'>
+<td class='idx'>16</td>
+<td><img class='poster' src='http://ia.media-imdb.com/images/M/MV5BOTgxMDQwMDk0OF5BMl5BanBnXkFtZTgwNjU5OTg2NDE@._V1_SX300.jpg' alt='Poster'></td>
+<td>Inside Out</td>
+<td>2015</td>
+<td>95</td>
+<td>Animation, Adventure, Comedy</td>
+<td>Pete Docter, Ronnie Del Carmen</td>
+<td class='score'>8.740</td>
+<td class='my'><input class='myRange' type='range' min='1' max='10' step='1'><span class='pill myVal'>–</span></td>
+</tr>
+<tr data-id='2582802' data-score='8.736' data-year='2014' data-minutes='107'>
+<td class='idx'>17</td>
+<td><img class='poster' src='http://ia.media-imdb.com/images/M/MV5BMTU4OTQ3MDUyMV5BMl5BanBnXkFtZTgwOTA2MjU0MjE@._V1_SX300.jpg' alt='Poster'></td>
+<td>Whiplash</td>
+<td>2014</td>
+<td>107</td>
+<td>Drama, Music</td>
+<td>Damien Chazelle</td>
+<td class='score'>8.736</td>
+<td class='my'><input class='myRange' type='range' min='1' max='10' step='1'><span class='pill myVal'>–</span></td>
+</tr>
+<tr data-id='2084970' data-score='8.729' data-year='2014' data-minutes='114'>
+<td class='idx'>18</td>
+<td><img class='poster' src='http://ia.media-imdb.com/images/M/MV5BNDkwNTEyMzkzNl5BMl5BanBnXkFtZTgwNTAwNzk3MjE@._V1_SX300.jpg' alt='Poster'></td>
+<td>The Imitation Game</td>
+<td>2014</td>
+<td>114</td>
+<td>Biography, Drama, Thriller</td>
+<td>Morten Tyldum</td>
+<td class='score'>8.729</td>
+<td class='my'><input class='myRange' type='range' min='1' max='10' step='1'><span class='pill myVal'>–</span></td>
+</tr>
+<tr data-id='0454876' data-score='8.722' data-year='2012' data-minutes='127'>
+<td class='idx'>19</td>
+<td><img class='poster' src='http://ia.media-imdb.com/images/M/MV5BNTg2OTY2ODg5OF5BMl5BanBnXkFtZTcwODM5MTYxOA@@._V1_SX300.jpg' alt='Poster'></td>
+<td>Life of Pi</td>
+<td>2012</td>
+<td>127</td>
+<td>Adventure, Drama, Fantasy</td>
+<td>Ang Lee</td>
+<td class='score'>8.722</td>
+<td class='my'><input class='myRange' type='range' min='1' max='10' step='1'><span class='pill myVal'>–</span></td>
+</tr>
+<tr data-id='2209418' data-score='8.643' data-year='2013' data-minutes='109'>
+<td class='idx'>20</td>
+<td><img class='poster' src='http://ia.media-imdb.com/images/M/MV5BMjA5NzgxODE2NF5BMl5BanBnXkFtZTcwNTI1NTI0OQ@@._V1_SX300.jpg' alt='Poster'></td>
+<td>Before Midnight</td>
+<td>2013</td>
+<td>109</td>
+<td>Drama, Romance</td>
+<td>Richard Linklater</td>
+<td class='score'>8.643</td>
+<td class='my'><input class='myRange' type='range' min='1' max='10' step='1'><span class='pill myVal'>–</span></td>
+</tr>
+</tbody></table>
+<p class='note' style='margin-top:10px'>Your 1–10 ratings are stored in this browser only (localStorage). They do not change the server’s data.</p>
+<script>
+(()=>{
+const LSKEY='my-recs-ratings';
+const table=document.getElementById('recs');
+const tbody=table.querySelector('tbody');
+const sortSel=document.getElementById('sortBy');
+const minMy=document.getElementById('minMy');
+const btnApply=document.getElementById('apply');
+const btnReset=document.getElementById('reset');
+let my=JSON.parse(localStorage.getItem(LSKEY)||'{}');
+for(const tr of tbody.querySelectorAll('tr')){
+  const id=tr.getAttribute('data-id');
+  const slider=tr.querySelector('.myRange');
+  const badge=tr.querySelector('.myVal');
+  if(my[id]){ slider.value=my[id]; badge.textContent=my[id]; }
+  slider.addEventListener('input',()=>{ badge.textContent=slider.value; });
+  slider.addEventListener('change',()=>{ my[id]=parseInt(slider.value,10); localStorage.setItem(LSKEY,JSON.stringify(my)); });
+}
+function currentMy(tr){ const id=tr.getAttribute('data-id'); return my[id]||0; }
+function cmp(a,b){
+  const mode=sortSel.value;
+  if(mode==='my'){ return (currentMy(b)-currentMy(a)) || (parseFloat(b.dataset.score)-parseFloat(a.dataset.score)); }
+  if(mode==='year'){ return parseInt(b.dataset.year)-parseInt(a.dataset.year); }
+  if(mode==='minutes'){ return parseInt(a.dataset.minutes)-parseInt(b.dataset.minutes); }
+  return parseFloat(b.dataset.score)-parseFloat(a.dataset.score);
+}
+function apply(){
+  const rows=Array.from(tbody.querySelectorAll('tr'));
+  const min=parseInt(minMy.value||'1',10);
+  const kept=rows.filter(tr=> currentMy(tr)>=min || (min<=1));
+  kept.sort(cmp);
+  tbody.innerHTML='';
+  kept.forEach((tr,i)=>{ tr.querySelector('.idx').textContent=(i+1); tbody.appendChild(tr); });
+}
+btnApply.addEventListener('click',apply);
+btnReset.addEventListener('click',()=>{ localStorage.removeItem(LSKEY); my={}; for(const tr of tbody.querySelectorAll('tr')){ tr.querySelector('.myRange').value='5'; tr.querySelector('.myVal').textContent='–'; } apply(); });
+sortSel.addEventListener('change',apply);
+})();
+</script>
+</div></body></html>
